@@ -8,6 +8,11 @@ Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "Tests", "Tests\Tests.cpppro
 		{71A33D1E-62B0-497D-BC00-164291128FA9} = {71A33D1E-62B0-497D-BC00-164291128FA9}
 	EndProjectSection
 EndProject
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "Example", "Example\Example.cppproj", "{C69754C6-81F7-4459-8D5F-5F24AA097DC7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{71A33D1E-62B0-497D-BC00-164291128FA9} = {71A33D1E-62B0-497D-BC00-164291128FA9}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|AVR = Debug|AVR
@@ -22,6 +27,10 @@ Global
 		{6C5096B9-4B94-41DA-8F1D-2CB3176E23FA}.Debug|AVR.Build.0 = Debug|AVR
 		{6C5096B9-4B94-41DA-8F1D-2CB3176E23FA}.Release|AVR.ActiveCfg = Release|AVR
 		{6C5096B9-4B94-41DA-8F1D-2CB3176E23FA}.Release|AVR.Build.0 = Release|AVR
+		{C69754C6-81F7-4459-8D5F-5F24AA097DC7}.Debug|AVR.ActiveCfg = Debug|AVR
+		{C69754C6-81F7-4459-8D5F-5F24AA097DC7}.Debug|AVR.Build.0 = Debug|AVR
+		{C69754C6-81F7-4459-8D5F-5F24AA097DC7}.Release|AVR.ActiveCfg = Release|AVR
+		{C69754C6-81F7-4459-8D5F-5F24AA097DC7}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
