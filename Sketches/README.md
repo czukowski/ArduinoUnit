@@ -1,0 +1,1 @@
+These are legacy sketches for Arduino IDE, may no longer be functional.
