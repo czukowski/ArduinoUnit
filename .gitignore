@@ -1,4 +1,6 @@
 ArduinoUnit/Debug/
 ArduinoUnit/Release/
+Tests/Debug/
+Tests/Release/
 ArduinoUnit.atsuo
 TcfTransactionLog.csv
