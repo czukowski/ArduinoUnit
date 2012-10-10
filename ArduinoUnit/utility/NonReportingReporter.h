@@ -22,6 +22,8 @@ THE SOFTWARE.
 #ifndef NONREPORTINGREPORTER_H_
 #define NONREPORTINGREPORTER_H_
 
+#include "utility/Reporter.h"
+
 class NonReportingReporter : public Reporter {
 	public:
 		void begin(const char* /*name*/) {}
