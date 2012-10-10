@@ -134,7 +134,9 @@ bool TestSuite::run() {
 
         TestLink* current = head;
         while (current != NULL) {
+            setUp();
             current->test.testFunction(current->test);
+            tearDown();
             current = current->next;
         }
 

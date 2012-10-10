@@ -98,6 +98,16 @@ public:
     void add(const char* name, void (*testFunction)(Test&));
 
     /**
+     * Sets up a fixture before each test is run, to be overridden in the child class
+     */
+	virtual void setUp() {};
+
+    /**
+     * Cleans up objects after each test is run, to be overridden in the child class
+     */
+	virtual void tearDown() {};
+
+    /**
      * Runs this test suite. If this suite has already run calling
      * this function has no effect.
      *
