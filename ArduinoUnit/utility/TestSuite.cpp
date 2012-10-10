@@ -194,6 +194,21 @@ void TestSuite::suiteAssertEquals(Test& test, int expected, int actual, int line
     }
 }
 
+void TestSuite::suiteAssertEquals(Test& test, const char *first, const char *second, int lineNumber) {
+    int firstLength = strlen(first);
+    int secondLength = strlen(second);
+    suiteAssertEquals(test, firstLength, secondLength, lineNumber);
+    if (!test.successful) {
+        return;
+    }
+    for (int i = 0; i < firstLength; i++) {
+        if (first[i] != second[i]) {
+            reporter->reportEqualityFailure(test, adjustLineNumber(lineNumber), first, second);
+            return;
+        }
+    }
+}
+
 void TestSuite::addFailure() {
     successCount--;
     failureCount++;

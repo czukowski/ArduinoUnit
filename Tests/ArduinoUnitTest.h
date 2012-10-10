@@ -28,8 +28,6 @@ THE SOFTWARE.
 #include <utility/Reporter.h>
 #include <utility/NonReportingReporter.h>
 
-void assertStringsEqual(Test& __test__, const char* expected, const char* actual);
-
 NonReportingReporter nonReportingReporter;
 
 extern TestSuite suite;
@@ -217,7 +215,7 @@ testInSuite(noNameReported, suite) {
 
     assertTrue(noName.run());
 
-    assertStringsEqual(__test__, "", reporterSpy.suiteName);
+    assertEquals("", reporterSpy.suiteName);
 }
 
 testInSuite(nameReported, suite) {
@@ -228,7 +226,7 @@ testInSuite(nameReported, suite) {
 
     assertTrue(named.run());
 
-    assertStringsEqual(__test__, name, reporterSpy.suiteName);
+    assertEquals(name, reporterSpy.suiteName);
 }
 
 TestSuite failureReported;
@@ -243,7 +241,7 @@ testInSuite(failuredReported, suite) {
 
     failureReported.run();
     
-    assertStringsEqual(__test__, "failureReportedTest", reporterSpy.failedTest->name);
+    assertEquals("failureReportedTest", reporterSpy.failedTest->name);
     assertEquals(250, reporterSpy.failedLineNumber);
 }
 
@@ -259,10 +257,10 @@ testInSuite(equalityFailureReported, suite) {
     
     equalityFailureReported.run();
 
-    assertStringsEqual(__test__, "equalityFailureReportedTest", reporterSpy.equalityFailedTest->name);
+    assertEquals("equalityFailureReportedTest", reporterSpy.equalityFailedTest->name);
     assertEquals(266, reporterSpy.equalityFailedLineNumber);
-    assertStringsEqual(__test__, "17", reporterSpy.equalityFailedExpected);
-    assertStringsEqual(__test__, "63", reporterSpy.equalityFailedActual);
+    assertEquals("17", reporterSpy.equalityFailedExpected);
+    assertEquals("63", reporterSpy.equalityFailedActual);
 }
 
 TestSuite completeReported("completeReportedName");
@@ -273,7 +271,7 @@ testInSuite(completeReported, suite) {
     
     completeReported.run();
     
-    assertStringsEqual(__test__, "completeReportedName", reporterSpy.completeSuite->getName());
+    assertEquals("completeReportedName", reporterSpy.completeSuite->getName());
 }
 
 TestSuite nestedAssertionFailures;
@@ -314,11 +312,4 @@ testInSuite(nestedEqualityAssertionFailures, suite) {
     nestedEqualityAssertionFailures.run();
     
     assertEquals(1, reporterSpy.completeSuite->getFailureCount());
-}
-
-void assertStringsEqual(Test& __test__, const char* expected, const char* actual) {
-    assertEquals(strlen(expected), strlen(actual));
-    for (int i = 0; i < strlen(expected); i++) {
-        assertEquals(expected[i], actual[i]);
-    } 
 }

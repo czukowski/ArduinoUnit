@@ -162,6 +162,16 @@ public:
      */
     void suiteAssertEquals(Test& test, int first, int second, int lineNumber);
 
+    /**
+     * Asserts that two values are equal.
+     *
+     * @param test test in which assertion occurred
+     * @param first first value to test for equality
+     * @param second second value to test for equality
+     * @param lineNumber line number on which assertion lives
+     */
+    void suiteAssertEquals(Test& test, const char *first, const char *second, int lineNumber);
+
 private:
     /**
      * Adds a failure to this test suite.

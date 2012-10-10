@@ -68,7 +68,7 @@ THE SOFTWARE.
  */
 #define assertEquals(expected, actual)\
     __test__.suite->suiteAssertEquals(__test__, (expected), (actual), __LINE__);\
-    if ((expected) != (actual)) {\
+    if (!__test__.successful) {\
         return;\
     }
 
