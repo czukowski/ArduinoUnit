@@ -26,16 +26,9 @@ THE SOFTWARE.
  */
 #include <ArduinoUnit.h>
 #include <utility/Reporter.h>
+#include <utility/NonReportingReporter.h>
 
 void assertStringsEqual(Test& __test__, const char* expected, const char* actual);
-
-class NonReportingReporter : public Reporter {
-public:
-    void begin(const char* /*name*/) { }
-    void reportFailure(const Test& /*test*/, int /*lineNumber*/) { }
-    void reportEqualityFailure(const Test& /*test*/, int /*lineNumber*/, const char* /*expected*/, const char* /*actual*/) { }
-    void reportComplete(const TestSuite& /*suite*/) { }
-};
 
 NonReportingReporter nonReportingReporter;
 
